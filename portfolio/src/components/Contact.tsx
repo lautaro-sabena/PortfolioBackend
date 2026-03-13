@@ -101,7 +101,7 @@ export default function Contact() {
             Email
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/lautaro-sabena"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
@@ -109,7 +109,7 @@ export default function Contact() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/lautarosabena/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"

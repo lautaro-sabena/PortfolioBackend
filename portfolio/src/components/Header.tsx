@@ -57,7 +57,7 @@ export default function Header() {
             CV
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/lautaro-sabena"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted hover:text-foreground transition-colors"

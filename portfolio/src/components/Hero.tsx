@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-lg text-muted font-light mb-6"
         >
-          Backend Engineer & System Designer
+          Full Stack Engineer
         </motion.p>
 
         <motion.p
@@ -62,7 +62,7 @@ export default function Hero() {
             <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
           </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/lautaro-sabena"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 border-2 border-border text-foreground font-medium text-sm rounded-md hover:border-foreground hover:bg-foreground/5 transition-all duration-300"
