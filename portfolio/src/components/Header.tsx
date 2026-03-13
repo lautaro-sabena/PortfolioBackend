@@ -5,14 +5,8 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Work" },
   { href: "#contact", label: "Contact" },
-];
-
-const socialLinks = [
-  { href: "https://github.com", label: "GitHub" },
-  { href: "https://linkedin.com", label: "LinkedIn" },
 ];
 
 export default function Header() {
@@ -20,7 +14,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -28,44 +22,41 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-background/80 backdrop-blur-xl border-b border-border py-3" 
+          : "bg-transparent py-6"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto px-8 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-semibold text-gray-900 hover:text-indigo-600 transition-colors"
+          className="text-sm font-medium tracking-tight hover:opacity-70 transition-opacity"
         >
           Lautaro Sabena
         </Link>
 
-        <div className="flex items-center gap-6">
-          <div className="hidden md:flex items-center gap-6">
+        <div className="flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                className="text-sm text-muted hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-600 hover:text-indigo-600 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted hover:text-foreground transition-colors"
+          >
+            GitHub
+          </a>
         </div>
       </nav>
     </header>

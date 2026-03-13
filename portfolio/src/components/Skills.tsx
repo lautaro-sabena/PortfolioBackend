@@ -4,52 +4,54 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   {
-    name: "Languages",
-    skills: ["C#", "TypeScript", "JavaScript", "Kotlin (Basic)"],
-  },
-  {
     name: "Backend",
     skills: ["ASP.NET Core", "REST APIs", "Node.js", "Entity Framework"],
   },
   {
-    name: "Databases",
-    skills: ["PostgreSQL", "SQL Server"],
+    name: "Languages",
+    skills: ["C#", "TypeScript", "JavaScript", "Kotlin"],
   },
   {
-    name: "Tools & Other",
-    skills: ["Docker", "Git", "Linux", "Unity", "Real-time systems"],
+    name: "Data",
+    skills: ["PostgreSQL", "SQL Server", "Redis"],
+  },
+  {
+    name: "Tools",
+    skills: ["Docker", "Git", "Linux", "Unity"],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.h2
+    <section className="py-32 border-t border-border">
+      <div className="max-w-5xl mx-auto px-8">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-gray-900 mb-12"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16"
         >
-          Skills
-        </motion.h2>
+          <h2 className="text-sm font-medium tracking-widest uppercase text-muted">
+            Skills &amp; Tools
+          </h2>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-sm font-medium text-foreground mb-4">
                 {category.name}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {category.skills.map((skill) => (
-                  <li key={skill} className="text-gray-600 text-sm">
+                  <li key={skill} className="text-sm text-muted">
                     {skill}
                   </li>
                 ))}
