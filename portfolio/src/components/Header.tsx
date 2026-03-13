@@ -22,22 +22,22 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-background/80 backdrop-blur-xl border-b border-border py-3" 
-          : "bg-transparent py-6"
+          ? "bg-background/80 backdrop-blur-md border-b border-border py-3" 
+          : "bg-transparent py-5"
       }`}
     >
-      <nav className="max-w-5xl mx-auto px-8 flex items-center justify-between">
+      <nav className="max-w-4xl mx-auto px-6 flex items-center justify-between">
         <Link
           href="/"
-          className="text-sm font-medium tracking-tight hover:opacity-70 transition-opacity"
+          className="text-sm font-medium hover:opacity-70 transition-opacity"
         >
           Lautaro Sabena
         </Link>
 
-        <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-8">
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -49,6 +49,13 @@ export default function Header() {
             ))}
           </div>
 
+          <a
+            href="/cv.pdf"
+            download
+            className="px-3 py-1.5 text-xs border border-border rounded-md text-foreground hover:border-foreground transition-colors"
+          >
+            CV
+          </a>
           <a
             href="https://github.com"
             target="_blank"

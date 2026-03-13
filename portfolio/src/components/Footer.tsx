@@ -1,16 +1,14 @@
 export default function Footer() {
   return (
-    <footer className="py-12 border-t border-border">
-      <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted">
-          © {new Date().getFullYear()} Lautaro Sabena
-        </p>
-        <div className="flex items-center gap-6">
+    <footer className="py-8 border-t border-border">
+      <div className="max-w-4xl mx-auto px-6 flex items-center justify-between text-xs text-muted">
+        <p>© {new Date().getFullYear()} Lautaro Sabena</p>
+        <div className="flex items-center gap-4">
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-foreground transition-colors"
+            className="hover:text-foreground transition-colors"
           >
             GitHub
           </a>
@@ -18,7 +16,7 @@ export default function Footer() {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-foreground transition-colors"
+            className="hover:text-foreground transition-colors"
           >
             LinkedIn
           </a>

@@ -2,54 +2,120 @@
 
 import { motion } from "framer-motion";
 
-const contactLinks = [
-  { href: "mailto:lautaro@example.com", label: "Email" },
-  { href: "https://github.com", label: "GitHub" },
-  { href: "https://linkedin.com", label: "LinkedIn" },
-];
-
 export default function Contact() {
   return (
-    <section id="contact" className="py-32">
-      <div className="max-w-3xl mx-auto px-8 text-center">
+    <section id="contact" className="py-20">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6">
-            Let&apos;s work together.
+          <h2 className="text-2xl font-light text-foreground mb-2">
+            Get in touch
           </h2>
-          <p className="text-muted mb-10 leading-relaxed">
-            I&apos;m currently available for freelance work and full-time opportunities.
-            If you have a project that needs some love, let&apos;s talk.
+          <p className="text-sm text-muted">
+            Have a project in mind? Let&apos;s talk.
           </p>
         </motion.div>
 
+        <motion.form
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-md mx-auto space-y-4"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="name" className="block text-xs text-muted mb-1.5">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="w-full px-3 py-2 text-sm border border-border rounded-md bg-transparent text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/50 transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-xs text-muted mb-1.5">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full px-3 py-2 text-sm border border-border rounded-md bg-transparent text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/50 transition-colors"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-xs text-muted mb-1.5">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              required
+              className="w-full px-3 py-2 text-sm border border-border rounded-md bg-transparent text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/50 transition-colors resize-none"
+              placeholder="Tell me about your project..."
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full px-6 py-2.5 bg-foreground text-background font-medium text-sm rounded-md border-2 border-foreground hover:bg-transparent hover:text-foreground transition-colors"
+          >
+            Send Message
+          </button>
+        </motion.form>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap justify-center gap-4"
+          transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap justify-center gap-3 mt-10"
         >
-          {contactLinks.map((link, index) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group px-6 py-3 border border-border rounded-full text-sm text-muted hover:border-foreground hover:text-foreground transition-all duration-300"
-            >
-              <span className="inline-flex items-center gap-2">
-                {link.label}
-                <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                  →
-                </span>
-              </span>
-            </a>
-          ))}
+          <a
+            href="/cv.pdf"
+            download
+            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
+          >
+            Download CV
+          </a>
+          <a
+            href="mailto:lautaro@example.com"
+            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
+          >
+            Email
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
+          >
+            LinkedIn
+          </a>
         </motion.div>
       </div>
     </section>

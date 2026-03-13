@@ -2,60 +2,42 @@
 
 import { motion } from "framer-motion";
 
-const skillCategories = [
-  {
-    name: "Backend",
-    skills: ["ASP.NET Core", "REST APIs", "Node.js", "Entity Framework"],
-  },
-  {
-    name: "Languages",
-    skills: ["C#", "TypeScript", "JavaScript", "Kotlin"],
-  },
-  {
-    name: "Data",
-    skills: ["PostgreSQL", "SQL Server", "Redis"],
-  },
-  {
-    name: "Tools",
-    skills: ["Docker", "Git", "Linux", "Unity"],
-  },
+const skillGroups = [
+  { label: "Languages", skills: ["C#", "TypeScript", "Kotlin"] },
+  { label: "Backend", skills: ["ASP.NET Core", "REST APIs", "EF Core"] },
+  { label: "Data", skills: ["PostgreSQL", "SQL Server"] },
+  { label: "Tools", skills: ["Docker", "Git", "Linux", "Unity"] },
 ];
 
 export default function Skills() {
   return (
-    <section className="py-32 border-t border-border">
-      <div className="max-w-5xl mx-auto px-8">
+    <section className="py-20 border-t border-border">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="text-xs font-medium tracking-widest uppercase text-muted mb-8"
         >
-          <h2 className="text-sm font-medium tracking-widest uppercase text-muted">
-            Skills &amp; Tools
-          </h2>
+          Skills
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {skillCategories.map((category, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {skillGroups.map((group, index) => (
             <motion.div
-              key={category.name}
+              key={group.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h3 className="text-sm font-medium text-foreground mb-4">
-                {category.name}
+              <h3 className="text-xs font-medium text-foreground mb-2">
+                {group.label}
               </h3>
-              <ul className="space-y-3">
-                {category.skills.map((skill) => (
-                  <li key={skill} className="text-sm text-muted">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-xs text-muted leading-relaxed">
+                {group.skills.join(", ")}
+              </p>
             </motion.div>
           ))}
         </div>
