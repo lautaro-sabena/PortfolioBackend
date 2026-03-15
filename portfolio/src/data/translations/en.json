@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "about": "About",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "about": {
+    "available": "Available for work",
+    "description1": "Fullstack Software Engineer with strong experience in C# and modern web technologies. I design and build scalable backend services, modern web applications, and API-driven systems using .NET, React, and cloud-ready architectures.",
+    "description2": "My background includes building real-time applications and transitioning into scalable backend services and frontend platforms. I work across the full stack using C#, .NET, Node.js, React, and modern API architectures.",
+    "focusOn": "I focus on:",
+    "focusAreas": [
+      "clean architecture",
+      "maintainable systems",
+      "scalable APIs",
+      "practical engineering"
+    ]
+  },
+  "projects": {
+    "title": "Selected Work",
+    "source": "source",
+    "list": [
+      {
+        "name": "TaskFlow API",
+        "description": "REST API built with ASP.NET Core implementing JWT authentication, modular architecture and containerized deployment."
+      },
+      {
+        "name": "BookingHub",
+        "description": "Fullstack booking platform with scheduling logic, REST API backend and React frontend interface."
+      },
+      {
+        "name": "Developer Portfolio",
+        "description": "Modern developer portfolio built with Next.js and TailwindCSS focusing on performance and minimal design."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills & Tools",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Databases",
+      "devops": "DevOps & Tools"
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Have a project in mind? Let's talk.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message"
+  },
+  "footer": {
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

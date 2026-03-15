@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Work" },
-  { href: "#contact", label: "Contact" },
-];
+import { useTranslation } from "@/context/LanguageContext";
+import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +17,12 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "#about", labelKey: "nav.about" },
+    { href: "#projects", labelKey: "nav.work" },
+    { href: "#contact", labelKey: "nav.contact" },
+  ];
 
   return (
     <header
@@ -44,7 +48,7 @@ export default function Header() {
                 href={link.href}
                 className="text-sm text-muted hover:text-foreground transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             ))}
           </div>
@@ -72,6 +76,8 @@ export default function Header() {
           >
             LinkedIn
           </a>
+          <LanguageToggle />
+          <ThemeToggle />
         </div>
       </nav>
     </header>

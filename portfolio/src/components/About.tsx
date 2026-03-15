@@ -1,15 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const focusAreas = [
-  "clean architecture",
-  "maintainable systems",
-  "scalable APIs",
-  "practical engineering",
-];
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function About() {
+  const { t } = useTranslation();
+
+  const focusAreas = t("about.focusAreas") as unknown as string[];
+
   return (
     <section id="about" className="py-20">
       <div className="max-w-4xl mx-auto px-6">
@@ -22,24 +20,20 @@ export default function About() {
           <div className="mb-6">
             <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium tracking-wider uppercase text-foreground/60 border border-border rounded-full">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-              Available for work
+              {t("about.available")}
             </span>
           </div>
 
           <p className="text-base text-muted leading-relaxed mb-6 max-w-2xl">
-            Fullstack Software Engineer with strong experience in C# and modern web technologies. 
-            I design and build scalable backend services, modern web applications, and API-driven systems 
-            using .NET, React, and cloud-ready architectures.
+            {t("about.description1")}
           </p>
 
           <p className="text-base text-muted leading-relaxed mb-6 max-w-2xl">
-            My background includes building real-time applications and transitioning into scalable 
-            backend services and frontend platforms. I work across the full stack using C#, .NET, 
-            Node.js, React, and modern API architectures.
+            {t("about.description2")}
           </p>
 
           <div>
-            <p className="text-sm text-muted mb-3">I focus on:</p>
+            <p className="text-sm text-muted mb-3">{t("about.focusOn")}</p>
             <div className="flex flex-wrap gap-2">
               {focusAreas.map((area, index) => (
                 <span

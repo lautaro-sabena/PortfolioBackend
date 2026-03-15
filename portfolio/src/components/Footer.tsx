@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslation } from "@/context/LanguageContext";
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="py-8 border-t border-border">
       <div className="max-w-4xl mx-auto px-6 flex items-center justify-between text-xs text-muted">
@@ -8,7 +14,7 @@ export default function Footer() {
             href="mailto:lautaro@example.com"
             className="hover:text-foreground transition-colors"
           >
-            Email
+            {t("footer.email")}
           </a>
           <a
             href="https://github.com/lautaro-sabena"
@@ -16,7 +22,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            GitHub
+            {t("footer.github")}
           </a>
           <a
             href="https://www.linkedin.com/in/lautarosabena/"
@@ -24,7 +30,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            LinkedIn
+            {t("footer.linkedin")}
           </a>
         </div>
       </div>

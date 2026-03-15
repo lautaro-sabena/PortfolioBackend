@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "work": "Trabajos",
+    "contact": "Contacto"
+  },
+  "about": {
+    "available": "Disponible para trabajar",
+    "description1": "Ingeniero de Software Fullstack con sólida experiencia en C# y tecnologías web modernas. Diseño y construyo servicios backend escalables, aplicaciones web modernas y sistemas basados en APIs usando .NET, React y arquitecturas cloud-ready.",
+    "description2": "Mi background incluye la construcción de aplicaciones en tiempo real y la transición hacia servicios backend escalables y plataformas frontend. Trabajo en el stack completo usando C#, .NET, Node.js, React y arquitecturas de API modernas.",
+    "focusOn": "Me enfoco en:",
+    "focusAreas": [
+      "arquitectura limpia",
+      "sistemas mantenibles",
+      "APIs escalables",
+      "ingeniería práctica"
+    ]
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "source": "código",
+    "list": [
+      {
+        "name": "TaskFlow API",
+        "description": "API REST construida con ASP.NET Core implementando autenticación JWT, arquitectura modular y despliegue contenerizado."
+      },
+      {
+        "name": "BookingHub",
+        "description": "Plataforma de reservas fullstack con lógica de programación, backend API REST e interfaz frontend en React."
+      },
+      {
+        "name": "Portfolio Desarrollador",
+        "description": "Portfolio de desarrollador moderno construido con Next.js y TailwindCSS enfocado en rendimiento y diseño minimalista."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades y Herramientas",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Bases de Datos",
+      "devops": "DevOps y Herramientas"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tenés un proyecto en mente? Hablemos.",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Contame sobre tu proyecto...",
+    "send": "Enviar Mensaje"
+  },
+  "footer": {
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

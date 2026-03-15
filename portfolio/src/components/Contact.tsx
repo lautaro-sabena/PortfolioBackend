@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-20">
       <div className="max-w-4xl mx-auto px-6">
@@ -14,10 +17,10 @@ export default function Contact() {
           className="text-center mb-10"
         >
           <h2 className="text-2xl font-light text-foreground mb-2">
-            Get in touch
+            {t("contact.title")}
           </h2>
           <p className="text-sm text-muted">
-            Have a project in mind? Let&apos;s talk.
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -32,7 +35,7 @@ export default function Contact() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className="block text-xs text-muted mb-1.5">
-                Name
+                {t("contact.name")}
               </label>
               <input
                 type="text"
@@ -40,12 +43,12 @@ export default function Contact() {
                 name="name"
                 required
                 className="w-full px-3 py-2 text-sm border border-border rounded-md bg-transparent text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/50 transition-colors"
-                placeholder="Your name"
+                placeholder={t("contact.namePlaceholder")}
               />
             </div>
             <div>
               <label htmlFor="email" className="block text-xs text-muted mb-1.5">
-                Email
+                {t("contact.email")}
               </label>
               <input
                 type="email"
@@ -53,14 +56,14 @@ export default function Contact() {
                 name="email"
                 required
                 className="w-full px-3 py-2 text-sm border border-border rounded-md bg-transparent text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/50 transition-colors"
-                placeholder="your@email.com"
+                placeholder={t("contact.emailPlaceholder")}
               />
             </div>
           </div>
 
           <div>
             <label htmlFor="message" className="block text-xs text-muted mb-1.5">
-              Message
+              {t("contact.message")}
             </label>
             <textarea
               id="message"
@@ -68,7 +71,7 @@ export default function Contact() {
               rows={4}
               required
               className="w-full px-3 py-2 text-sm border border-border rounded-md bg-transparent text-foreground placeholder:text-muted/50 focus:outline-none focus:border-foreground/50 transition-colors resize-none"
-              placeholder="Tell me about your project..."
+              placeholder={t("contact.messagePlaceholder")}
             />
           </div>
 
@@ -76,7 +79,7 @@ export default function Contact() {
             type="submit"
             className="w-full px-6 py-2.5 bg-foreground text-background font-medium text-sm rounded-md border-2 border-foreground hover:bg-transparent hover:text-foreground transition-colors"
           >
-            Send Message
+            {t("contact.send")}
           </button>
         </motion.form>
       </div>
