@@ -36,38 +36,47 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-lg text-muted font-light mb-6"
         >
-          Full Stack Engineer
+          Fullstack Software Engineer
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="text-sm text-muted/80 mb-8 max-w-md mx-auto"
+          className="text-sm text-muted/80 mb-8 max-w-lg mx-auto"
         >
-          4+ years in C#/Unity real-time systems. Now building scalable .NET backend services.
+          Fullstack developer with strong experience in C# and modern web technologies. 
+          I design and build scalable backend services, modern web applications, and 
+          API-driven systems using .NET, React, and cloud-ready architectures.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center justify-center gap-4"
+          className="flex items-center justify-center gap-3"
         >
           <Link
             href="#projects"
-            className="group px-6 py-2.5 bg-foreground text-background font-medium text-sm rounded-md border-2 border-foreground hover:bg-transparent hover:text-foreground transition-all duration-300"
+            className="px-5 py-2.5 bg-foreground text-background font-medium text-sm rounded-md border-2 border-foreground hover:bg-transparent hover:text-foreground transition-all duration-300"
           >
             View Projects
-            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
           </Link>
           <a
             href="https://github.com/lautaro-sabena"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 border-2 border-border text-foreground font-medium text-sm rounded-md hover:border-foreground hover:bg-foreground/5 transition-all duration-300"
+            className="px-5 py-2.5 border-2 border-border text-foreground font-medium text-sm rounded-md hover:border-foreground hover:bg-foreground/5 transition-all duration-300"
           >
             GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lautarosabena/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 border-2 border-border text-foreground font-medium text-sm rounded-md hover:border-foreground hover:bg-foreground/5 transition-all duration-300"
+          >
+            LinkedIn
           </a>
         </motion.div>
       </div>
