@@ -5,6 +5,12 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} Lautaro Sabena</p>
         <div className="flex items-center gap-4">
           <a
+            href="mailto:lautaro@example.com"
+            className="hover:text-foreground transition-colors"
+          >
+            Email
+          </a>
+          <a
             href="https://github.com/lautaro-sabena"
             target="_blank"
             rel="noopener noreferrer"

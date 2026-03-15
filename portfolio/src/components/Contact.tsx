@@ -79,44 +79,6 @@ export default function Contact() {
             Send Message
           </button>
         </motion.form>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap justify-center gap-3 mt-10"
-        >
-          <a
-            href="/cv.pdf"
-            download
-            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
-          >
-            Download CV
-          </a>
-          <a
-            href="mailto:lautaro@example.com"
-            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
-          >
-            Email
-          </a>
-          <a
-            href="https://github.com/lautaro-sabena"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lautarosabena/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 text-sm border-2 border-border rounded-md text-foreground hover:border-foreground transition-colors"
-          >
-            LinkedIn
-          </a>
-        </motion.div>
       </div>
     </section>
   );

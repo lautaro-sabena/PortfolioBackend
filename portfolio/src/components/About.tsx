@@ -19,14 +19,23 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
+          <div className="mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium tracking-wider uppercase text-foreground/60 border border-border rounded-full">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+              Available for work
+            </span>
+          </div>
+
           <p className="text-base text-muted leading-relaxed mb-6 max-w-2xl">
-            Fullstack Software Engineer with experience designing modular backend systems 
-            and modern web applications. My background includes building real-time 
-            applications and transitioning into scalable backend services and frontend platforms.
+            Fullstack Software Engineer with strong experience in C# and modern web technologies. 
+            I design and build scalable backend services, modern web applications, and API-driven systems 
+            using .NET, React, and cloud-ready architectures.
           </p>
 
           <p className="text-base text-muted leading-relaxed mb-6 max-w-2xl">
-            I work across the full stack using C#, .NET, Node.js, React, and modern API architectures.
+            My background includes building real-time applications and transitioning into scalable 
+            backend services and frontend platforms. I work across the full stack using C#, .NET, 
+            Node.js, React, and modern API architectures.
           </p>
 
           <div>

@@ -64,6 +64,14 @@ export default function Header() {
           >
             GitHub
           </a>
+          <a
+            href="https://www.linkedin.com/in/lautarosabena/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted hover:text-foreground transition-colors"
+          >
+            LinkedIn
+          </a>
         </div>
       </nav>
     </header>
