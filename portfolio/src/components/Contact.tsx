@@ -25,12 +25,13 @@ export default function Contact() {
         </motion.div>
 
         <motion.form
+          action="https://formspree.io/f/mjgaakkv"
+          method="POST"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-3"
-          onSubmit={(e) => e.preventDefault()}
         >
           <div className="grid grid-cols-2 gap-3">
             <div>
