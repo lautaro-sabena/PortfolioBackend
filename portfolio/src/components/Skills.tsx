@@ -78,37 +78,37 @@ export default function Skills() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 border-t border-border">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-12 border-b border-border">
+      <div className="max-w-2xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-xs font-medium tracking-widest uppercase text-muted mb-8"
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="text-sm font-medium tracking-widest uppercase text-muted mb-6"
         >
           {t("skills.title")}
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.nameKey}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIndex * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: catIndex * 0.05, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h3 className="text-xs font-medium text-foreground mb-3">
+              <h3 className="text-sm font-medium text-foreground mb-3">
                 {t(category.nameKey)}
               </h3>
               <div className="flex flex-wrap gap-1.5">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className="inline-flex items-center gap-1.5 px-2 py-1 text-[11px] border border-border rounded text-muted"
+                    className="px-2 py-1 text-xs border border-border rounded text-muted"
                   >
-                    <FontAwesomeIcon icon={skill.icon} className="w-3 h-3" />
+                    <FontAwesomeIcon icon={skill.icon} className="w-3 h-3 mr-1" />
                     {skill.name}
                   </span>
                 ))}
