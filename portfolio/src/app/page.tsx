@@ -11,8 +11,8 @@ export default function Home() {
       <Header />
       <main className="pt-16">
         <About />
-        <Projects />
         <Skills />
+        <Projects />
         <Contact />
       </main>
       <Footer />
