@@ -15,7 +15,7 @@ interface LanguageContextType {
 }
 
 const defaultContext: LanguageContextType = {
-  language: "en",
+  language: "es",
   setLanguage: () => {},
   t: (key: string) => key,
 };
@@ -23,7 +23,7 @@ const defaultContext: LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType>(defaultContext);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  const [language, setLanguageState] = useState<Language>("es");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
