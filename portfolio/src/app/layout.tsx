@@ -15,13 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lautaro Sabena | Full Stack Engineer",
-  description: "Full Stack Engineer — 4+ years in C#/Unity, building scalable .NET backend services and modern web applications.",
+  title: "Lautaro Sabena | Fullstack Engineer",
+  description: "Fullstack Software Engineer specializing in C#, .NET and modern web development.",
   keywords: ["Full Stack Engineer", ".NET Developer", "C#", "ASP.NET Core", "Software Engineer", "Portfolio"],
   authors: [{ name: "Lautaro Sabena" }],
+  icons: {
+    icon: "/icono.png",
+  },
   openGraph: {
-    title: "Lautaro Sabena | Full Stack Engineer",
-    description: "Full Stack Engineer — 4+ years in C#/Unity, building scalable .NET backend services and modern web applications.",
+    title: "Lautaro Sabena | Fullstack Engineer",
+    description: "Fullstack Software Engineer specializing in C#, .NET and modern web development.",
     type: "website",
   },
 };
