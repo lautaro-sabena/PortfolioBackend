@@ -23,6 +23,6 @@ export const projects: Project[] = [
     name: "Developer Portfolio",
     description: "Modern developer portfolio built with Next.js and TailwindCSS focusing on performance and minimal design.",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
-    github: "https://github.com/lautaro-sabena/portfolio",
+    github: "https://github.com/lautaro-sabena/PortfolioBackend",
   },
 ];
