@@ -1,5 +1,7 @@
 "use client";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "@/context/LanguageContext";
@@ -64,17 +66,19 @@ export default function Header() {
             href="https://github.com/lautaro-sabena"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-foreground transition-colors"
+            className="p-2 text-muted hover:text-foreground transition-colors"
+            aria-label="GitHub"
           >
-            GitHub
+            <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
           </a>
           <a
             href="https://www.linkedin.com/in/lautarosabena/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-foreground transition-colors"
+            className="p-2 text-muted hover:text-foreground transition-colors"
+            aria-label="LinkedIn"
           >
-            LinkedIn
+            <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
           </a>
           <LanguageToggle />
           <ThemeToggle />
