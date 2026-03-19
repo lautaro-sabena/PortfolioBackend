@@ -19,6 +19,7 @@
   "projects": {
     "title": "Proyectos Destacados",
     "source": "código",
+    "liveDemo": "Live Demo",
     "list": [
       {
         "name": "TaskFlow API",

@@ -22,6 +22,7 @@ export default function Projects() {
       description: translated?.description || original.description,
       technologies: original.technologies,
       github: original.github,
+      live: original.live,
     };
   };
 
@@ -66,17 +67,29 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                {projectInfo.github && (
-                  <a
-                    href={projectInfo.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-foreground bg-background border border-foreground/20 rounded hover:border-foreground/50 transition-colors"
-                  >
-                    <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
-                    {t("projects.source")}
-                  </a>
-                )}
+                <div className="flex flex-wrap gap-3">
+                  {projectInfo.github && (
+                    <a
+                      href={projectInfo.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-foreground bg-background border border-foreground/20 rounded hover:border-foreground/50 transition-colors"
+                    >
+                      <FontAwesomeIcon icon={faGithub} className="w-3.5 h-3.5" />
+                      {t("projects.source")}
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-foreground bg-background border border-foreground/20 rounded hover:border-foreground/50 transition-colors"
+                    >
+                      {t("projects.liveDemo")}
+                    </a>
+                  )}
+                </div>
               </motion.article>
             );
           })}

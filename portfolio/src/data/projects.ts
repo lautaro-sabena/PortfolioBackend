@@ -18,6 +18,7 @@ export const projects: Project[] = [
     description: "Fullstack booking platform with scheduling logic, REST API backend and React frontend interface.",
     technologies: ["ASP.NET Core", "React", "PostgreSQL", "Docker"],
     github: "https://github.com/lautaro-sabena/BookingHubAPI",
+    live: "https://bookinghubapi-frontend-h0ui.onrender.com",
   },
   {
     name: "Developer Portfolio",

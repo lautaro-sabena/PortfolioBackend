@@ -19,6 +19,7 @@
   "projects": {
     "title": "Selected Work",
     "source": "source",
+    "liveDemo": "Live Demo",
     "list": [
       {
         "name": "TaskFlow API",
