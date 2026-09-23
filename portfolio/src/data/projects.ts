@@ -4,6 +4,7 @@ export interface Project {
   technologies: string[];
   github?: string;
   live?: string;
+  wip?: boolean;
 }
 
 export const projects: Project[] = [
@@ -25,5 +26,11 @@ export const projects: Project[] = [
     description: "Modern developer portfolio built with Next.js and TailwindCSS focusing on performance and minimal design.",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     github: "https://github.com/lautaro-sabena/PortfolioBackend/tree/1a85f9a19a7c574d1ff714a30099cfd2d4dd3e0f/portfolio",
+  },
+  {
+    name: "Logora",
+    description: "Media tracking platform to log movies, TV shows, music and games in one place, with external catalog integrations, backlog and public profiles.",
+    technologies: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Turborepo"],
+    wip: true,
   },
 ];

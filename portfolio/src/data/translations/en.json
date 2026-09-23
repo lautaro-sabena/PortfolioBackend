@@ -20,6 +20,7 @@
     "title": "Selected Work",
     "source": "source",
     "liveDemo": "Live Demo",
+    "wip": "Work in progress",
     "list": [
       {
         "name": "TaskFlow API",
@@ -32,6 +33,10 @@
       {
         "name": "Developer Portfolio",
         "description": "Modern developer portfolio built with Next.js and TailwindCSS focusing on performance and minimal design."
+      },
+      {
+        "name": "Logora",
+        "description": "Media tracking platform to log movies, TV shows, music and games in one place, with external catalog integrations, backlog and public profiles."
       }
     ]
   },

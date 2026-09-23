@@ -23,6 +23,7 @@ export default function Projects() {
       technologies: original.technologies,
       github: original.github,
       live: original.live,
+      wip: original.wip,
     };
   };
 
@@ -51,8 +52,13 @@ export default function Projects() {
                 transition={{ duration: 0.4, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
                 className="pb-5 border-b border-border/50 last:border-0"
               >
-                <h3 className="text-base font-medium text-foreground mb-1">
+                <h3 className="flex items-center gap-2 text-base font-medium text-foreground mb-1">
                   {projectInfo.name}
+                  {projectInfo.wip && (
+                    <span className="px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted border border-border rounded">
+                      {t("projects.wip")}
+                    </span>
+                  )}
                 </h3>
                 <p className="text-sm text-muted mb-3">
                   {projectInfo.description}

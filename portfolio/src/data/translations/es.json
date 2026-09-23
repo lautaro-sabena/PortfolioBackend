@@ -20,6 +20,7 @@
     "title": "Proyectos Destacados",
     "source": "código",
     "liveDemo": "Live Demo",
+    "wip": "En desarrollo",
     "list": [
       {
         "name": "TaskFlow API",
@@ -32,6 +33,10 @@
       {
         "name": "Portfolio Desarrollador",
         "description": "Portfolio de desarrollador moderno construido con Next.js y TailwindCSS enfocado en rendimiento y diseño minimalista."
+      },
+      {
+        "name": "Logora",
+        "description": "Plataforma para registrar películas, series, música y videojuegos en un solo lugar, con integración de catálogos externos, backlog y perfiles públicos."
       }
     ]
   },
