@@ -7,7 +7,10 @@ import {
   faServer, 
   faDatabase, 
   faListCheck,
-  faHashtag 
+  faHashtag,
+  faLayerGroup,
+  faVial,
+  type IconDefinition
 } from "@fortawesome/free-solid-svg-icons";
 import { 
   faJs, 
@@ -22,7 +25,7 @@ import { useTranslation } from "@/context/LanguageContext";
 
 interface Skill {
   name: string;
-  icon: any;
+  icon: IconDefinition;
 }
 
 interface SkillCategory {
@@ -37,6 +40,9 @@ const skillCategories: SkillCategory[] = [
       { name: ".NET", icon: faCode },
       { name: "ASP.NET Core", icon: faServer },
       { name: "Node.js", icon: faNode },
+      { name: "NestJS", icon: faServer },
+      { name: "Prisma", icon: faDatabase },
+      { name: "EF Core", icon: faDatabase },
       { name: "REST APIs", icon: faServer },
       { name: "WebSockets", icon: faServer },
       { name: "JWT", icon: faServer },
@@ -50,6 +56,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Next.js", icon: faReact },
       { name: "HTML5", icon: faCode },
       { name: "CSS3", icon: faCode },
+      { name: "Tailwind CSS", icon: faCode },
       { name: "TypeScript", icon: faCode },
       { name: "JavaScript", icon: faJs },
     ],
@@ -67,6 +74,9 @@ const skillCategories: SkillCategory[] = [
       { name: "Docker", icon: faDocker },
       { name: "Git", icon: faGit },
       { name: "GitHub", icon: faGithub },
+      { name: "GitHub Actions", icon: faGithub },
+      { name: "Turborepo", icon: faLayerGroup },
+      { name: "Jest", icon: faVial },
       { name: "Bitbucket", icon: faBitbucket },
       { name: "Jira", icon: faListCheck },
       { name: "Trello", icon: faListCheck },
