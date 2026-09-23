@@ -1,24 +1,12 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslation } from "@/context/LanguageContext";
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { href: "#about", labelKey: "nav.about" },
@@ -27,59 +15,24 @@ export default function Header() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-background/80 backdrop-blur-md border-b border-border py-2" 
-          : "bg-transparent py-3"
-      }`}
-    >
-      <nav className="max-w-2xl mx-auto px-6 flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-sm font-medium hover:opacity-70 transition-opacity"
-        >
+    <header className="fixed top-3.5 left-0 right-0 z-50 px-3.5">
+      <nav className="glass max-w-[760px] mx-auto py-1.5 pr-1.5 pl-[18px] flex items-center justify-between gap-2.5 rounded-full">
+        <Link href="#about" className="text-[15px] font-semibold tracking-tight whitespace-nowrap hover:opacity-80">
           Lautaro Sabena
         </Link>
 
-        <div className="flex items-center gap-2">
-          <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5 p-[3px] mr-1 rounded-full bg-[var(--chip)]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted hover:text-foreground transition-colors"
+                className="text-[13px] font-medium px-3 py-1.5 rounded-full text-muted hover:bg-[var(--glass-strong)] hover:text-foreground transition-colors"
               >
                 {t(link.labelKey)}
               </Link>
             ))}
           </div>
-
-          <a
-            href="/cv.pdf"
-            download
-            className="px-2 py-1 text-xs border border-border rounded-md text-foreground hover:border-foreground transition-colors"
-          >
-            CV
-          </a>
-          <a
-            href="https://github.com/lautaro-sabena"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-muted hover:text-foreground transition-colors"
-            aria-label="GitHub"
-          >
-            <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lautarosabena/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-muted hover:text-foreground transition-colors"
-            aria-label="LinkedIn"
-          >
-            <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
-          </a>
           <LanguageToggle />
           <ThemeToggle />
         </div>

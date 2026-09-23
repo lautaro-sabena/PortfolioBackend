@@ -2,24 +2,24 @@
 
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faCode, 
-  faServer, 
-  faDatabase, 
+import {
+  faCode,
+  faServer,
+  faDatabase,
   faListCheck,
   faHashtag,
   faLayerGroup,
   faVial,
-  type IconDefinition
+  type IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
-import { 
-  faJs, 
-  faReact, 
-  faNode, 
-  faDocker, 
-  faGit, 
-  faGithub, 
-  faBitbucket 
+import {
+  faJs,
+  faReact,
+  faNode,
+  faDocker,
+  faGit,
+  faGithub,
+  faBitbucket,
 } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "@/context/LanguageContext";
 
@@ -30,12 +30,19 @@ interface Skill {
 
 interface SkillCategory {
   nameKey: string;
+  icon: IconDefinition;
+  hue: number;
   skills: Skill[];
 }
+
+const tile = (h: number) =>
+  `linear-gradient(145deg, oklch(0.72 0.17 ${h}), oklch(0.55 0.19 ${h + 20}))`;
 
 const skillCategories: SkillCategory[] = [
   {
     nameKey: "skills.categories.backend",
+    icon: faServer,
+    hue: 255,
     skills: [
       { name: ".NET", icon: faCode },
       { name: "ASP.NET Core", icon: faServer },
@@ -51,6 +58,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     nameKey: "skills.categories.frontend",
+    icon: faReact,
+    hue: 200,
     skills: [
       { name: "React", icon: faReact },
       { name: "Next.js", icon: faReact },
@@ -63,6 +72,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     nameKey: "skills.categories.databases",
+    icon: faDatabase,
+    hue: 150,
     skills: [
       { name: "PostgreSQL", icon: faDatabase },
       { name: "MySQL", icon: faDatabase },
@@ -70,6 +81,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     nameKey: "skills.categories.devops",
+    icon: faLayerGroup,
+    hue: 30,
     skills: [
       { name: "Docker", icon: faDocker },
       { name: "Git", icon: faGit },
@@ -88,44 +101,44 @@ export default function Skills() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-12 border-b border-border">
-      <div className="max-w-2xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="text-sm font-medium tracking-widest uppercase text-muted mb-6"
-        >
-          {t("skills.title")}
-        </motion.div>
+    <section className="flex flex-col gap-3">
+      <h2 className="text-[22px] font-bold tracking-tight mt-3 mx-2 mb-0.5">{t("skills.title")}</h2>
 
-        <div className="grid grid-cols-2 gap-6">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={category.nameKey}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: catIndex * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <h3 className="text-sm font-medium text-foreground mb-3">
-                {t(category.nameKey)}
-              </h3>
-              <div className="flex flex-wrap gap-1.5">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill.name}
-                    className="px-2 py-1 text-xs border border-border rounded text-muted"
-                  >
-                    <FontAwesomeIcon icon={skill.icon} className="w-3 h-3 mr-1" />
-                    {skill.name}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-3">
+        {skillCategories.map((category, catIndex) => (
+          <motion.div
+            key={category.nameKey}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: catIndex * 0.05, ease: [0.22, 1, 0.36, 1] }}
+            className="glass p-5 rounded-[26px]"
+          >
+            <div className="flex items-center gap-2.5 mb-3.5">
+              <span
+                className="w-8 h-8 rounded-[10px] grid place-items-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,.4)]"
+                style={{ background: tile(category.hue) }}
+              >
+                <FontAwesomeIcon icon={category.icon} className="w-3.5 h-3.5" />
+              </span>
+              <h3 className="text-base font-semibold tracking-tight">{t(category.nameKey)}</h3>
+              <span className="ml-auto text-xs font-medium text-muted font-mono">
+                {String(category.skills.length).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill.name}
+                  className="chip inline-flex items-center gap-1.5 px-[11px] py-1.5 text-[12.5px] font-medium rounded-full"
+                >
+                  <FontAwesomeIcon icon={skill.icon} className="w-[11px] h-[11px] text-muted" />
+                  {skill.name}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ export default function LanguageToggle() {
     <button
       onClick={toggle}
       aria-label={`Switch to ${language === "en" ? "Spanish" : "English"}`}
-      className="px-2 py-1 text-xs font-medium border border-border rounded-md text-foreground hover:border-foreground transition-colors flex items-center gap-1.5"
+      className="chip h-[34px] px-[11px] flex items-center gap-1.5 text-xs font-semibold rounded-full text-foreground hover:bg-[var(--glass-strong)] transition-colors cursor-pointer"
     >
       <Globe className="w-3.5 h-3.5" />
       <span>{language === "en" ? "EN" : "ES"}</span>

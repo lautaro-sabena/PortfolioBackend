@@ -8,6 +8,8 @@
     "available": "Available for work",
     "description1": "Fullstack Software Engineer with strong experience in C# and modern web technologies. I design and build scalable backend services, modern web applications, and API-driven systems using .NET, React, and cloud-ready architectures.",
     "description2": "My background includes building real-time applications and transitioning into scalable backend services and frontend platforms. I work across the full stack using C#, .NET, Node.js, React, and modern API architectures.",
+    "viewProjects": "View Projects",
+    "cv": "Download CV",
     "focusOn": "I focus on:",
     "focusAreas": [
       "clean architecture",

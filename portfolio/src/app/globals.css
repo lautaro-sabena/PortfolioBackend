@@ -3,28 +3,76 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fafafa;
-  --foreground: #0a0a0a;
-  --muted: #525252;
-  --border: #e5e5e5;
+  --background: #eceef6;
+  --foreground: #0b0b10;
+  --fg2: rgba(20, 20, 28, 0.84);
+  --muted: #4a4a55;
+  --border: rgba(60, 60, 67, 0.14);
   --accent: #171717;
+  --primary: oklch(0.62 0.19 255);
+  --primary-hover: oklch(0.58 0.19 255);
+  --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.32));
+  --glass-strong: rgba(255, 255, 255, 0.7);
+  --chip: rgba(255, 255, 255, 0.45);
+  --gb: rgba(255, 255, 255, 0.75);
+  --gs: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(255, 255, 255, 0.3), 0 12px 40px rgba(40, 40, 90, 0.12);
+  --blur: 28px;
+  --b1: oklch(0.84 0.13 300);
+  --b2: oklch(0.84 0.13 220);
+  --b3: oklch(0.84 0.13 60);
+  --b4: oklch(0.84 0.13 170);
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --muted: #a3a3a3;
-  --border: #262626;
+  --background: #07080e;
+  --foreground: #f5f5f7;
+  --fg2: rgba(245, 245, 247, 0.84);
+  --muted: rgba(235, 235, 245, 0.66);
+  --border: rgba(255, 255, 255, 0.1);
+  --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  --glass-strong: rgba(255, 255, 255, 0.14);
+  --chip: rgba(255, 255, 255, 0.08);
+  --gb: rgba(255, 255, 255, 0.16);
+  --gs: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.04), 0 12px 40px rgba(0, 0, 0, 0.35);
+  --b1: oklch(0.5 0.19 285);
+  --b2: oklch(0.5 0.19 230);
+  --b3: oklch(0.5 0.19 330);
+  --b4: oklch(0.5 0.19 180);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-fg2: var(--fg2);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Liquid glass surfaces */
+@utility glass {
+  background: var(--glass);
+  border: 1px solid var(--gb);
+  box-shadow: var(--gs);
+  backdrop-filter: blur(var(--blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(180%);
+}
+@utility chip {
+  background: var(--chip);
+  border: 1px solid var(--gb);
+}
+@utility glass-strong {
+  background: var(--glass-strong);
+  border: 1px solid var(--gb);
+}
+@utility btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 6px 20px oklch(0.62 0.19 255 / 0.4);
 }
 
 * {
@@ -34,10 +82,10 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 html {
@@ -45,6 +93,5 @@ html {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: oklch(0.62 0.19 255 / 0.35);
 }
