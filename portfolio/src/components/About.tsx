@@ -8,7 +8,7 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "@/context/LanguageContext";
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   const focusAreas = t("about.focusAreas") as unknown as string[];
 
@@ -52,7 +52,7 @@ export default function About() {
           {t("about.viewProjects")}
         </Link>
         <a
-          href="/cv.pdf"
+          href={`/Lautaro_Sabena_CV_${language.toUpperCase()}_2026.pdf`}
           download
           className="glass-strong h-11 px-5 inline-flex items-center gap-2 text-[15px] font-semibold rounded-full hover:bg-[var(--chip)] transition-colors"
         >
